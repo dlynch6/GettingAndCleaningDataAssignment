@@ -1,0 +1,67 @@
+Study Design
+
+
+This is data from a Human Activity Recognition database built from the recordings of 30 subjects performing activities of daily living (ADL) while carrying a waist-mounted smartphone with embedded inertial sensors.
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone
+Use of the source dataset is reference from: Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
+
+Data has been read in from txt files using the read.table function.
+Columns and entries were renamed to be more descriptive. Data was merged using rbind and cbind. Data was filtered by using only columns that had 'mean' or 'std' in their titles.
+
+Aggregate is used in the end to get average values of numeric columns for subject and activity.
+
+
+
+
+
+Code Book
+
+
+These are the variables in TidyData
+
+"Subject" - the number of the subject (from 1 to 30)
+
+"Activity" - one of 6 activitys (standing, laying etc.)
+
+For each of the following, the units are the averages of the relevant measurement for each subject and activity.
+The variables include the average velocity and acceleration along the 3 spatial axes. This is also netted off against gravity (data on which is also included)
+
+"TimeSignalsBodyAccelerationAverageAlongXAxis", "TimeSignalsBodyAccelerationAverageAlongYAxis" "TimeSignalsBodyAccelerationAverageAlongZAxis" 
+"TimeSignalsBodyAccelerationStandardDeviationAlongXAxis" "TimeSignalsBodyAccelerationStandardDeviationAlongYAxis" 
+"TimeSignalsBodyAccelerationStandardDeviationAlongZAxis" "TimeSignalsGravityAccelerationAverageAlongXAxis" "TimeSignalsGravityAccelerationAverageAlongYAxis" 
+"TimeSignalsGravityAccelerationAverageAlongZAxis" "TimeSignalsGravityAccelerationStandardDeviationAlongXAxis" 
+"TimeSignalsGravityAccelerationStandardDeviationAlongYAxis" "TimeSignalsGravityAccelerationStandardDeviationAlongZAxis" 
+"TimeSignalsBodyAccelerationJerkAverageAlongXAxis" "TimeSignalsBodyAccelerationJerkAverageAlongYAxis" 
+"TimeSignalsBodyAccelerationJerkAverageAlongZAxis" "TimeSignalsBodyAccelerationJerkStandardDeviationAlongXAxis" 
+"TimeSignalsBodyAccelerationJerkStandardDeviationAlongYAxis" "TimeSignalsBodyAccelerationJerkStandardDeviationAlongZAxis"
+ "TimeSignalsBodyVelocityAverageAlongXAxis" "TimeSignalsBodyVelocityAverageAlongYAxis" "TimeSignalsBodyVelocityAverageAlongZAxis" 
+"TimeSignalsBodyVelocityStandardDeviationAlongXAxis" "TimeSignalsBodyVelocityStandardDeviationAlongYAxis" 
+"TimeSignalsBodyVelocityStandardDeviationAlongZAxis" "TimeSignalsBodyVelocityJerkAverageAlongXAxis" "TimeSignalsBodyVelocityJerkAverageAlongYAxis"
+ "TimeSignalsBodyVelocityJerkAverageAlongZAxis" "TimeSignalsBodyVelocityJerkStandardDeviationAlongXAxis"
+ "TimeSignalsBodyVelocityJerkStandardDeviationAlongYAxis" "TimeSignalsBodyVelocityJerkStandardDeviationAlongZAxis" 
+"TimeSignalsBodyAccelerationMagnitudeAverage" "TimeSignalsBodyAccelerationMagnitudeStandardDeviation" 
+"TimeSignalsGravityAccelerationMagnitudeAverage" "TimeSignalsGravityAccelerationMagnitudeStandardDeviation"
+ "TimeSignalsBodyAccelerationJerkMagnitudeAverage" "TimeSignalsBodyAccelerationJerkMagnitudeStandardDeviation" 
+"TimeSignalsBodyVelocityMagnitudeAverage" "TimeSignalsBodyVelocityMagnitudeStandardDeviation" "TimeSignalsBodyVelocityJerkMagnitudeAverage"
+ "TimeSignalsBodyVelocityJerkMagnitudeStandardDeviation" "FrequencySignalsBodyAccelerationAverageAlongXAxis" 
+"FrequencySignalsBodyAccelerationAverageAlongYAxis" "FrequencySignalsBodyAccelerationAverageAlongZAxis" 
+"FrequencySignalsBodyAccelerationStandardDeviationAlongXAxis" "FrequencySignalsBodyAccelerationStandardDeviationAlongYAxis" 
+"FrequencySignalsBodyAccelerationStandardDeviationAlongZAxis" "FrequencySignalsBodyAccelerationAverageFrequencyAlongXAxis" 
+"FrequencySignalsBodyAccelerationAverageFrequencyAlongYAxis" "FrequencySignalsBodyAccelerationAverageFrequencyAlongZAxis" 
+"FrequencySignalsBodyAccelerationJerkAverageAlongXAxis" "FrequencySignalsBodyAccelerationJerkAverageAlongYAxis" 
+"FrequencySignalsBodyAccelerationJerkAverageAlongZAxis" "FrequencySignalsBodyAccelerationJerkStandardDeviationAlongXAxis" 
+"FrequencySignalsBodyAccelerationJerkStandardDeviationAlongYAxis" "FrequencySignalsBodyAccelerationJerkStandardDeviationAlongZAxis" 
+"FrequencySignalsBodyAccelerationJerkAverageFrequencyAlongXAxis" "FrequencySignalsBodyAccelerationJerkAverageFrequencyAlongYAxis" 
+"FrequencySignalsBodyAccelerationJerkAverageFrequencyAlongZAxis" "FrequencySignalsBodyVelocityAverageAlongXAxis" 
+"FrequencySignalsBodyVelocityAverageAlongYAxis" "FrequencySignalsBodyVelocityAverageAlongZAxis" "FrequencySignalsBodyVelocityStandardDeviationAlongXAxis" 
+"FrequencySignalsBodyVelocityStandardDeviationAlongYAxis" "FrequencySignalsBodyVelocityStandardDeviationAlongZAxis" 
+"FrequencySignalsBodyVelocityAverageFrequencyAlongXAxis" "FrequencySignalsBodyVelocityAverageFrequencyAlongYAxis" 
+"FrequencySignalsBodyVelocityAverageFrequencyAlongZAxis" "FrequencySignalsBodyAccelerationMagnitudeAverage" 
+"FrequencySignalsBodyAccelerationMagnitudeStandardDeviation" "FrequencySignalsBodyAccelerationMagnitudeAverageFrequency" 
+"FrequencySignalsBodyBodyAccelerationJerkMagnitudeAverage" "FrequencySignalsBodyBodyAccelerationJerkMagnitudeStandardDeviation" 
+"FrequencySignalsBodyBodyAccelerationJerkMagnitudeAverageFrequency" "FrequencySignalsBodyBodyVelocityMagnitudeAverage" 
+"FrequencySignalsBodyBodyVelocityMagnitudeStandardDeviation" "FrequencySignalsBodyBodyVelocityMagnitudeAverageFrequency"
+ "FrequencySignalsBodyBodyVelocityJerkMagnitudeAverage" "FrequencySignalsBodyBodyVelocityJerkMagnitudeStandardDeviation"
+ "FrequencySignalsBodyBodyVelocityJerkMagnitudeAverageFrequency"
+
+
